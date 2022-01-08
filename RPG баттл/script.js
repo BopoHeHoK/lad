@@ -3,14 +3,8 @@
 //создаём игру в виде функции
 function game(){
 
-  //для начала игры, запросим разрешение пользователя
-  function start(){
-    if(confirm("Хотите начать игру?")) return true;
-    else return false;
-  }
-
   //полученные данные
-  if(start()){
+  if(confirm("Хотите начать игру?")){
     const monster = {
       maxHealth: 10,
       name: "Лютый",
