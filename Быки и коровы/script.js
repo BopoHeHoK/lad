@@ -10,12 +10,36 @@ function game(){
     let attemps = 10; //начальное число попыток
     let hiddenArr = []; //создаем число, которое должен угадать пользователь
     let userArr = []; //массив для числа пользователя
+    let randomLenghtArr; //длина массива
+    let hiddenNumber; //загаданное число
+    let num;
+    //случайным образом выберем длину числа
+    function randomLenght(min, max){
+      randomLenghtArr = Math.floor(Math.random() * (max - min + 1) + min);
+      return randomLenghtArr;
+    } randomLenght(3, 6);
 
-    //используем рандомайзер для заполнения массива, который представляет число
-    let random3to6 = Math.floor(Math.random() * 3) + 3
-    for(let i = 0; i <= random3to6; i++) hiddenArr.push(Math.floor(Math.random() * 9) + 1);
-  
-    let hiddenNumber = hiddenArr.join(''); //представим число в виде строчки
+    alert(randomLenghtArr);
+
+    //заполним число уникальными цифрами от 0 до 9
+    function randomNumber(min, max){
+      let unic;
+      while (hiddenArr.length < randomLenghtArr) {
+        do {
+          unic=true
+          num = Math.floor(Math.random() * (max - min + 1) + min)
+          for(let i = 0; i < hiddenArr.length; i++){
+            if(num == hiddenArr[i]){
+              unic = false;
+              break;
+            } //// такое число уже было
+          }
+        } while (!unic) // повторить генерацию числа
+        hiddenArr.push(num);
+      }
+      hiddenNumber = hiddenArr.join(''); //представим число в виде строчки
+      return hiddenNumber;
+    } randomNumber(0, 9)
 
     alert(hiddenNumber); //проверка числа
 
@@ -56,20 +80,20 @@ function game(){
         if(right == userArr.length && wrong == 0) return true; //елси всё верно
       }
 
+      //если пользователь не угадал число и у него закончились попытки
+      if(attemps == 1){
+        alert(`Вы проиграли!\nВаше число: ${userNumber}\nЗагаданное число: ${hiddenNumber}`);
+        game();
+      }
       //если пользователь угадал число
-       if(checkArr()){
+      else if(checkArr()){
          alert(`Вы победили!\nЗагаданное число: ${hiddenNumber}`);
          game(); //предложим игроку сыграть ещё раз game();
        }
        //если пользователь не угадал число, но у него остались попытки
-       else{
-         attemps--;
-       }
-       //если пользователь не угадал число и у него закончились попытки
-       if(attemps == 0){
-         alert(`Вы проиграли!\nВаше число: ${userNumber}\nЗагаданное число: ${hiddenNumber}`);
-         game();
-       }
+      else{
+        attemps--;
+      }
     }
   }
   //если игрок отказался играть
