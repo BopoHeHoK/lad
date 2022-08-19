@@ -4,16 +4,73 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>JS Bin</title>
+    <title>RPG баттл</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
-    <form id="formElement">
-        One: <input type="text"><br>
-        Two: <input type="text">
-    </form>
+    <table border="1" class="table">
+        <tbody>
+            <tr>
+                <th colspan="4">RPG баттл</th>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <br>
+                    <b id="info">Выберите действие</b></br>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%" rowspan="3"><img src="resourses/monster.jpg" width="100%"></td>
+                <td width="20%">
+                    <p id="monsterAction1">Действие 1</p><button type="button" id="aiBtn1">0</button>
+                </td>
+                <td width="20%">
+                    <p id="eustathiusAction1">Действие 1</p><button type="button" id="userBtn1"
+                        onclick="move1()">Использовать</button>
+                </td>
+                <td width="30%" rowspan="3"><img src="resourses/magician.jpg" width="100%"></td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <p id="monsterAction2">Действие 2</p></br><button type="button" id="aiBtn2">0</button>
+                </td>
+                <td width="20%">
+                    <p id="eustathiusAction2">Действие 2</p></br><button type="button" id="userBtn2"
+                        onclick="move2()">Использовать</button>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">
+                    <p id="monsterAction3">Действие 3</p></br><button type="button" id="aiBtn3">0</button>
+                </td>
+                <td width="20%">
+                    <p id="eustathiusAction3">Действие 3</p></br><button type="button" id="userBtn3"
+                        onclick="move3()">Использовать</button>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%">
+                    <h3>Монстр Лютый</h3>
+                    <div id="monsterHp"></div>
+                </td>
+
+                <td width="20%">
+                    <p></p></br>
+                </td>
+                <td><br width="20%">
+                    <p id="eustathiusAction4">Действие 4</p></br><button type="button" id="userBtn4"
+                        onclick="move4()">Использовать</button>
+                </td>
+                <td width="30%">
+                    <h3>Маг Евстафий</h3>
+                    <div id="eustathiusHp"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
 </body>
 
 </html>

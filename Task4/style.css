@@ -1,3 +1,25 @@
-.focused {
-    outline: solid 2px red;
+table {
+    width: 100%;
+    text-align: center;
+    border: 2px solid  #696969;
+    border-collapse: collapse;
 }
+
+td {
+    padding: 20px;
+}
+
+button {
+    border: 1px outset;
+    background-color: #D3D3D3;
+    height:40px;
+    cursor:pointer;
+ }
+
+ #user 
+ Btn1{
+    border: 1px outset;
+    background-color: green;
+    height:40px;
+    cursor:pointer;
+ }
