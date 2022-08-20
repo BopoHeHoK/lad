@@ -165,7 +165,6 @@ function aiMove() {
             break;
         }
     }
-    console.log(monsterAction)
     return monsterAction;
 }
 
@@ -196,6 +195,7 @@ function attack() {
     if (magicDmgByMonster < 0) eustathiusHp += magicDmgByMonster;
     if (physicDmgByEustathius <= 0 && magicDmgByEustathius <= 0)
         difMonHp = physicDmgByEustathius + magicDmgByEustathius
+    console.log(difEusHp)
     if (physicDmgByEustathius < 0) monsterHp += physicDmgByEustathius;
     if (magicDmgByEustathius < 0) monsterHp += magicDmgByEustathius;
 

@@ -19,7 +19,6 @@ function game() {
     //заполним число уникальными цифрами от 0 до 9
     function randomNumber(min, max) {
       let numberLength = randomInteger(3, 6);//случайная длина
-      alert(numberLength)
       while (hiddenNumber.toString().length < numberLength) {
         let random = randomInteger(min, max);
         if (!hiddenNumber.includes(random)) {
@@ -28,8 +27,6 @@ function game() {
       }
       return hiddenNumber;
     } randomNumber(0, 9)
-
-    alert(hiddenNumber); //проверка числа
 
     function checkArr() {
       //создадим счётчики
